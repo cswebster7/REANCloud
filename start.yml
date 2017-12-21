@@ -1,0 +1,35 @@
+---
+
+- name: deploy Webserver
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    region: 'us-east-2'
+  vars_prompt:
+    - name: "DBUser"
+      prompt: "Enter the database username"
+      private: no
+    - name: "DBPassword"
+      prompt: "Enter the database password"
+      private: yes
+    - name: "DBRootPassword"
+      prompt: "Enter the database root password"
+      private: yes
+  roles:
+    - role: cloudformation-ansible
+
+  tasks:
+    - name: create stack
+      cloudformation:
+        stack_name: "Webserver"
+        state: "present"
+        region: "{{ region }}"
+        disable_rollback: true
+        template: "AWS-WordPress-Template.yaml"
+        template_parameters:
+          KeyName: "key_name"
+          DBUser: "{{ DBUser }}"
+          DBPassword: "{{ DBPassword }}"
+          DBRootPassword: "{{ DBRootPassword }}"
+      register: cloudformation_output
