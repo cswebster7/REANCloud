@@ -18,18 +18,3 @@
       private: yes
   roles:
     - role: ansible
-
-  # tasks:
-  #   - name: create stack
-  #     cloudformation:
-  #       stack_name: "Webserver"
-  #       state: "present"
-  #       region: "{{ region }}"
-  #       disable_rollback: true
-  #       template: "CloudFormation.yaml"
-  #       template_parameters:
-  #         KeyName: "key_name"
-  #         DBUser: "{{ DBUser }}"
-  #         DBPassword: "{{ DBPassword }}"
-  #         DBRootPassword: "{{ DBRootPassword }}"
-  #     register: cloudformation_output
