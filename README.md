@@ -6,8 +6,8 @@ This will launch an AWS EC2 instance and install WordPress on the server. CloudF
 
 First, you must set the AWS credentials in order to connect to the AWS account:
 
-  $ export AWS_ACCESS_KEY_ID="[ACCESS KEY]"
-  $ export AWS_SECRET_ACCESS_KEY="[SECRET ACCESS KEY]"
+    $ export AWS_ACCESS_KEY_ID="[ACCESS KEY]"
+    $ export AWS_SECRET_ACCESS_KEY="[SECRET ACCESS KEY]"
 
 Also, an AWS Key Pair must be generated. This assumes that a Key Pair has been created named "key_name".
 
@@ -15,7 +15,7 @@ Also, an AWS Key Pair must be generated. This assumes that a Key Pair has been c
 
 Begin by running the Ansible playbook, start.yml:
 
-  $ ansible-playbook start.yml
+    $ ansible-playbook start.yml
 
 This will prompt you for three inputs, necessary to setup WordPress. Specify a database username, a database password, and a database root password.
 
