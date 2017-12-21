@@ -17,19 +17,19 @@
       prompt: "Enter the database root password"
       private: yes
   roles:
-    - role: cloudformation-ansible
+    - role: ansible
 
-  tasks:
-    - name: create stack
-      cloudformation:
-        stack_name: "Webserver"
-        state: "present"
-        region: "{{ region }}"
-        disable_rollback: true
-        template: "AWS-WordPress-Template.yaml"
-        template_parameters:
-          KeyName: "key_name"
-          DBUser: "{{ DBUser }}"
-          DBPassword: "{{ DBPassword }}"
-          DBRootPassword: "{{ DBRootPassword }}"
-      register: cloudformation_output
+  # tasks:
+  #   - name: create stack
+  #     cloudformation:
+  #       stack_name: "Webserver"
+  #       state: "present"
+  #       region: "{{ region }}"
+  #       disable_rollback: true
+  #       template: "CloudFormation.yaml"
+  #       template_parameters:
+  #         KeyName: "key_name"
+  #         DBUser: "{{ DBUser }}"
+  #         DBPassword: "{{ DBPassword }}"
+  #         DBRootPassword: "{{ DBRootPassword }}"
+  #     register: cloudformation_output
