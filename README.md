@@ -21,4 +21,6 @@ This will prompt you for three inputs, necessary to setup WordPress. Specify a d
 
 The playbook will then call role ansible/main.yml and launch the AWS CloudFormation stack through the template CloudFormation.yaml, which will create all the resources, start the EC2 instance, and install WordPress.
 
-When the stack has completed creation, the URL of the newly created WordPress webserver will be displayed.
+When the stack has completed creation, the URL of the newly created WordPress webserver will be displayed as below:
+
+    $ "msg": "The WordPress server is online at http://ec2-34-205-172-39.compute-1.amazonaws.com/wordpress"
