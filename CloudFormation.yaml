@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: >-
-  This creates a VPC, a subnet, a Gateway, Gateway attachment, Route Table, Public Route,
-  a security group allowing HTTP and SSH access, and then launch a t2.small EC2 instance.
+  Creates a VPC, a subnet, a Gateway, Gateway attachment, Route Table, Public Route,
+  a security group allowing HTTP and SSH access, and a t2.small EC2 instance.
   This will install WordPress on the instance, with a local MySQL database for storage.
 Parameters:
   KeyName:
